@@ -41,12 +41,21 @@ h1 {
     transition: 0.4s;
 }
 
-.card > h3 {
+.card > h4 {
     padding: 16px;
     color: #313131;
 }
 
 .card > img:hover {
     transform: scale(1.05);
+}
+
+.top-anime {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
 }
 
