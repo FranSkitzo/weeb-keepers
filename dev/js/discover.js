@@ -6,6 +6,7 @@ let animeListEl = $('#anime-list');
 let animeDisplayed = false;
 
 searchBtn.on('click', () => {
+    refreshAnimeList();
     console.log("click");
     fetch(animeSearch + searchInput.val())
     .then(res => res.json())
@@ -34,4 +35,10 @@ function displayAnime() {
         $(animeCard).append(animeTitle);
         $(animeListEl).append(animeCard);
     }
+}
+
+function refreshAnimeList() {
+    animeList = [];
+    $('.card').remove();
+    $('.card-img').remove();
 }
