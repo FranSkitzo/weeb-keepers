@@ -3,9 +3,9 @@ let generalApi = 'https://api.jikan.moe/v3/'
 let searchInput = $('#search-input');
 let searchBtn = $('#search-btn');
 let animeList = [];
-let animeListEl = $('#anime-list');
+let animeListEl = $(".anime-list");
 let airingListEl = $(".top-airing");
-let tendingAnimeEl = $(".top-anime");
+let trendingAnimeEl = $(".top-anime");
 let animeDisplayed = false;
 
 
@@ -20,7 +20,7 @@ searchBtn.on('click', () => {
         for(let i = 0; i < data.results.length; i++) {
             animeList[i] = data.results[i];
         }
-        createCards(animeList, false, animeListEL);
+        createCards(animeList, false, animeListEl);
     }).catch(err => {
         console.log(err);
     });
@@ -41,7 +41,7 @@ function getTopAnime() {
     .then(res => res.json())
     .then(data => {
         console.log(data.top);
-        createCards(data.top, true, tendingAnimeEl);
+        createCards(data.top, true, trendingAnimeEl);
     });
 
     fetch(generalApi + 'top/anime/'+1+'/airing')
@@ -65,7 +65,7 @@ function createCards(list, isTop, el) {
             $(animeImg).addClass('card-img card');
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
-            $(el).append(animeCard);
+            el.append(animeCard);
         }
     }else {
         for(let i = 0; i < list.length; i++) {
@@ -81,7 +81,7 @@ function createCards(list, isTop, el) {
             $(animeCard).append(animeRank);
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
-            $(el).append(animeCard);
+            el.append(animeCard);
         }
     }
 }
