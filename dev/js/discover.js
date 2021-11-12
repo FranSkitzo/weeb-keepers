@@ -20,7 +20,7 @@ searchBtn.on('click', () => {
         for(let i = 0; i < data.results.length; i++) {
             animeList[i] = data.results[i];
         }
-        createCards(animeList, false, animeListEL);
+        createCards(animeList, false, animeListEl);
     }).catch(err => {
         console.log(err);
     });
