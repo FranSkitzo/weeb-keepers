@@ -27,6 +27,14 @@ searchBtn.on('click', () => {
     
 });
 
+$(function() {
+    $('.anime-list').on('click', '.card', function() {
+        $(this).find('.card-info').css('display', 'contents');
+        console.log("clicked");
+    });
+});
+
+
 // refreshes the anime list and clears the old elements off the page 
 function refreshAnimeList() {
     animeList = [];
@@ -63,8 +71,9 @@ function createCards(list, isTop, el) {
 
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card card-info');
+            $(animeCard).addClass('card');
             $(animeImg).addClass('card-img card');
+            $(animeInfo).addClass('card-info');
             $(animeInfo).html('<ul> <li>Airing period: ' + list[i].start_date.slice(0, 10) + ' - '
              + list[i].end_date.slice(0, 10) + '</li> <li> Rated: '+ list[i].rated +
              '</li> <li> Episodes: '+list[i].episodes.toString() +
@@ -83,7 +92,7 @@ function createCards(list, isTop, el) {
             let animeRank = document.createElement('h5');
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card card-info');
+            $(animeCard).addClass('card');
             $(animeImg).addClass('card-img card');
             $(animeRank).text('.' + list[i].rank);
             $(animeCard).append(animeRank);
