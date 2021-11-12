@@ -1,0 +1,53 @@
+:root {
+    --first-color: #021A2E;
+    --second-color: #28364A;
+    --third-color: #2F4555;
+    --white: #ffffff;
+    --accent-color: #FF4B24;
+}
+
+html {
+    background: var(--third-color);
+}
+
+body {
+    background-color: var(--first-color);
+}
+
+h1.title {
+    padding-top: 20px;
+}
+
+header {
+    margin: 10px auto;
+}
+
+header, h1.title, p.subtitle {
+    background-color: var(--third-color);
+    color: var(--white);
+}
+
+a.button.is-info {
+    background-color:var(--accent-color);
+}
+
+#searchbar {
+    justify-content: center;
+}
+
+.columns {
+    margin: auto;
+}
+
+div.column.is-full {
+    background-color: var(--first-color);
+}
+
+p.has-text-centered {
+    background-color: var(--accent-color);
+    color:var(--white);
+}
+
+#want-to-watch {
+    padding-top: 20px;
+}
