@@ -59,11 +59,19 @@ function createCards(list, isTop, el) {
             let animeCard = document.createElement('div');
             let animeImg = document.createElement('img');
             let animeTitle = document.createElement('h4');
+            let animeInfo = document.createElement('div');
+
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card');
+            $(animeCard).addClass('card card-info');
             $(animeImg).addClass('card-img card');
+            $(animeInfo).html('<ul> <li>Airing period: ' + list[i].start_date.slice(0, 10) + ' - '
+             + list[i].end_date.slice(0, 10) + '</li> <li> Rated: '+ list[i].rated +
+             '</li> <li> Episodes: '+list[i].episodes.toString() +
+             '</li> <li>Score: '+list[i].score.toString() +'</li> <li>Type: '+list[i].type+
+             '</li> <li> Synopsis: '+list[i].synopsis+'</li></ul>');
             $(animeCard).append(animeImg);
+            $(animeCard).append(animeInfo);
             $(animeCard).append(animeTitle);
             $(el).append(animeCard);
         }
@@ -75,7 +83,7 @@ function createCards(list, isTop, el) {
             let animeRank = document.createElement('h5');
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card');
+            $(animeCard).addClass('card card-info');
             $(animeImg).addClass('card-img card');
             $(animeRank).text('.' + list[i].rank);
             $(animeCard).append(animeRank);
