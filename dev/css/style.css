@@ -4,14 +4,11 @@
     --third-color: #2F4555;
     --white: #ffffff;
     --accent-color: #FF4B24;
+    --accent-color-2: #3e8ed0;
 }
 
 html {
-    background: var(--third-color);
-}
-
-body {
-    background-color: var(--first-color);
+    background: var(--second-color);
 }
 
 h1.title {
@@ -23,7 +20,7 @@ header {
 }
 
 header, h1.title, p.subtitle {
-    background-color: var(--third-color);
+    background-color: var(--second-color);
     color: var(--white);
 }
 
@@ -48,6 +45,14 @@ p.has-text-centered {
     color:var(--white);
 }
 
-#want-to-watch {
-    padding-top: 20px;
+a {
+    color: white;
+}
+
+#discover a:hover, #tracker a:hover {
+    background-color: var(--accent-color-2);
+    color: white;
+    padding: 10px;
+    margin: -10px;
+    border-radius: 5px;
 }
