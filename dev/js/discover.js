@@ -59,14 +59,17 @@ function createCards(list, isTop) {
             $(animeListEl).append(animeCard);
         }
     }else {
-        for(let i = 0; i < 10; i++) {
+        for(let i = 0; i < list.length; i++) {
             let animeCard = document.createElement('div');
             let animeImg = document.createElement('img');
             let animeTitle = document.createElement('h4');
+            let animeRank = document.createElement('h5');
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
             $(animeCard).addClass('card');
             $(animeImg).addClass('card-img card');
+            $(animeRank).text('.' + list[i].rank);
+            $(animeCard).append(animeRank);
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
             $('.top-anime').append(animeCard);
