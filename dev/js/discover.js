@@ -4,6 +4,8 @@ let searchInput = $('#search-input');
 let searchBtn = $('#search-btn');
 let animeList = [];
 let animeListEl = $('#anime-list');
+let airingListEl = $(".top-airing");
+let tendingAnimeEl = $(".top-anime");
 let animeDisplayed = false;
 
 
@@ -18,7 +20,7 @@ searchBtn.on('click', () => {
         for(let i = 0; i < data.results.length; i++) {
             animeList[i] = data.results[i];
         }
-        createCards(animeList, false);
+        createCards(animeList, false, animeListEL);
     }).catch(err => {
         console.log(err);
     });
@@ -35,16 +37,23 @@ function refreshAnimeList() {
 // fetches for the top anime that are currently airing
 function getTopAnime() {
     console.log('getting top anime');
+    fetch(generalApi + 'top/anime')
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.top);
+        createCards(data.top, true, tendingAnimeEl);
+    });
+
     fetch(generalApi + 'top/anime/'+1+'/airing')
     .then(res => res.json())
     .then(data => {
         console.log(data.top);
-        createCards(data.top, true);
+        createCards(data.top, true, airingListEl);
     });
 }
 
 // createCards function is a boilerplate function that makes generating elements easier
-function createCards(list, isTop) {
+function createCards(list, isTop, el) {
     if(!isTop) {
         for(let i = 0; i < list.length; i++) {
             let animeCard = document.createElement('div');
@@ -56,7 +65,7 @@ function createCards(list, isTop) {
             $(animeImg).addClass('card-img card');
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
-            $(animeListEl).append(animeCard);
+            $(el).append(animeCard);
         }
     }else {
         for(let i = 0; i < list.length; i++) {
@@ -72,7 +81,7 @@ function createCards(list, isTop) {
             $(animeCard).append(animeRank);
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
-            $('.top-anime').append(animeCard);
+            $(el).append(animeCard);
         }
     }
 }
