@@ -27,6 +27,7 @@ searchBtn.on('click', () => {
     
 });
 
+// hover functionality for cards that the user searched for
 $(function() {
     $('.anime-list').on('mouseover', '.card', (e) => {
         let id = e.currentTarget.className.split('id-')[1];
