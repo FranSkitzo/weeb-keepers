@@ -28,9 +28,16 @@ searchBtn.on('click', () => {
 });
 
 $(function() {
-    $('.anime-list').on('click', '.card', function() {
-        $(this).find('.card-info').css('display', 'contents');
-        console.log("clicked");
+    $('.anime-list').on('mouseover', '.card', (e) => {
+        let id = e.currentTarget.className.split('id-')[1];
+        $('.id-' + id).find('.card-info').show();
+        console.log(e.target);
+    });
+
+    $('.anime-list').on('mouseout', '.card', (e) => {
+        let id = e.currentTarget.className.split('id-')[1];
+        $('.id-' + id).find('.card-info').hide();
+        console.log(e.target);
     });
 });
 
@@ -71,7 +78,7 @@ function createCards(list, isTop, el) {
 
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card');
+            $(animeCard).addClass('card id-'+i.toString());
             $(animeImg).addClass('card-img card');
             $(animeInfo).addClass('card-info');
             $(animeInfo).html('<ul> <li>Airing period: ' + list[i].start_date.slice(0, 10) + ' - '
