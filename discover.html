@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="dev/css/discover.css">
     <title>Weeb Keeper - Discover</title>
-=======
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
-     <link rel="stylesheet" href="./dev/css/discover.css">
-    <title>Weeb Keeper - Discovery</title>
->>>>>>> 8ee37015e666336b6bf7ae44ed50d752b771a848
 </head>
-<body class="has-navbar-fixed">
+<body class="has-navbar-fixed has-background-dark">
     <!-- nav bar -->
     <nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item is-size-1">
+          <a class="navbar-item is-size-1 has-text-warning">
             Weeb Keeper
           </a>
+
+          <div id="search-bar">
+            <input type="text" class="input is-rounded" style="width: 75%;" placeholder="Search" id="search-input">
+            <button id="search-btn" class="button has-background-warning">Search Anime</button>
+        </div>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -32,63 +30,46 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item">
+            <a class="navbar-item has-text-warning">
               Home
             </a>
       
-            <a class="navbar-item">
-              Documentation
+            <a class="navbar-item has-text-warning">
+              Discovery
             </a>
-      
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  About
-                </a>
-                <a class="navbar-item">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
           </div>
         </div>
-      </nav>
-    <div class="columns is-mobile my-3">
-        <div class="column has-background-dark has-text-centered has-text-info-light mr-1 ml-1 is-one-quarter">
-            <p class="bd-notification is-info is-size-1-mobile is-size-1-touch is-size-1-tablet">Search</p>
+    </nav>
+      <!-- columns for Search and Trending -->
+    <div class="columns is-8 is-variable">
+        <!-- Column for holding the search bar -->
+        <div class="column box my-4 is-4-tablet">
+            <p class="title has-text-centered has-background-dark has-text-warning">Discover Anime</p>
         </div>
-
-        <div class="column has-background-dark has-text-info-light is-size-1-touch is-size-1-tablet has-text-centered mr-1 ml-1">
-            <p class="bd-notification is-info">Search Results</p>
+        <!-- Column for search results -->
+        <div class="column box my-4 has-background-grey">
+            <p class="title has-text-centered has-background-dark has-text-warning">Trending Anime</p>
+            <div class="columns is-mobile">
+                <div class="column box my-4 has-background-dark top-anime">
+                    <!-- This is where the cards will be -->
+                    <div class="card has-background-grey">
+                        <div class="card-image">
+                            <img src="https://www.fillmurray.com/1280/960" alt="Placeholder image">
+                        </div>
+                    
+                        <div class="card-content">
+                            <div class="content has-text-light">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos perferendis fugiat, saepe autem aspernatur!
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="card-footer-item has-text-light">Add to Watchlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-<<<<<<< HEAD
-=======
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-<body>
-
-    <header>
-        <h1>Discover Anime</h1>
-    </header>
-    <div id="search-bar">
-        <input type="text" id="search-input" placeholder="Naruto">
-        <button id="search-btn">Search Anime</button>
-    </div>
-    <div class="top-anime">
-        <h2>Trending Anime</h2>
     </div>
     <div class="top-airing">
         <h2>Anime Currently Airing</h2>
@@ -96,11 +77,12 @@
     <div class="anime-list">
     </div>
 
+
+</body>
 <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>   
 <script src="./dev/js/discover.js"></script>
->>>>>>> 8ee37015e666336b6bf7ae44ed50d752b771a848
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
