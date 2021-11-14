@@ -18,139 +18,50 @@
               <input class="input" type="text" placeholder="">
             </div>
             <div class="control">
-              <a class="button is-info">
+              <a id="searchbtn" class="button is-info">
                 Search
               </a>
             </div>
-          </div>
-          
-          <nav class="columns is-mobile">
+        </div>
+        <nav class="columns is-mobile">
             <div class="column" id="tracker"><a href="index.html">Tracker</a></div>
             <div class="column" id="discover"><a href="discover.html">Discover</a></div>
+            <div class="column" id="news"><a href="">News</a></div>
         </nav>
-    </header>
     
+    </header>
     <section id="want-to-watch" class="columns is-mobile">
         <div class="column is-full">
             <p class="has-text-centered">WANT TO WATCH</p>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
+            <div id="want-row" class="columns is-multiline is-centered is-mobile"></div>
         </div>
     </section>
 
     <section id="currently-watching" class="columns is-mobile">
         <div class="column is-full">
             <p class="has-text-centered">CURRENTLY WATCHING</p>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
-        </div>
+            <div id="current-row" class="columns is-multiline is-centered is-mobile"></div>
     </section>
 
     <section id="completed" class="columns is-mobile">
         <div class="column is-full">
             <p class="has-text-centered">COMPLETED</p>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
-            <div class="columns is-centered is-mobile">
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-                <div class="column has-text-centered">
-                    <figure class="image is-96x96 is-inline-block">
-                        <img src="https://bulma.io/images/placeholders/96x96.png">
-                    </figure>
-                </div>
-            </div>
-        </div>
+            <div id="completed-row" class="columns is-multiline is-centered is-mobile"></div>
     </section>
 
-    
-<script src="./dev/js/script.js"></script>
+    <div class="buttons are-small is-centered">
+        <a id="savebtn" class="button is-info">
+            Save
+        </a>
+        <a id="resetbtn" class="button is-info">
+            Reset
+        </a>
+    </div>
+
+
+    <!-- add news in footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>    
+    <script src="./dev/js/script.js"></script>
 </body>
 </html>
