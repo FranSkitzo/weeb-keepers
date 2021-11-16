@@ -29,13 +29,13 @@ searchBtn.on('click', () => {
 
 // hover functionality for cards that the user searched for
 $(function() {
-    $('.anime-list').on('mouseover', '.card', (e) => {
+    $('.anime-list, .top-anime, .top-airing').on('mouseover', '.card', (e) => {
         let id = e.currentTarget.className.split('id-')[1];
         $('.id-' + id).find('.card-info').show();
         console.log(e.target);
     });
 
-    $('.anime-list').on('mouseout', '.card', (e) => {
+    $('.anime-list, .top-anime, .top-airing').on('mouseout', '.card', (e) => {
         let id = e.currentTarget.className.split('id-')[1];
         $('.id-' + id).find('.card-info').hide();
         console.log(e.target);
@@ -98,14 +98,20 @@ function createCards(list, isTop, el) {
             let animeImg = document.createElement('img');
             let animeTitle = document.createElement('h4');
             let animeRank = document.createElement('h5');
+            let animeInfo =  document.createElement('div');
             $(animeImg).attr('src', list[i].image_url);
             $(animeTitle).text(list[i].title);
-            $(animeCard).addClass('card');
+            $(animeCard).addClass('card id-'+i.toString());
             $(animeImg).addClass('card-img card');
+            $(animeInfo).addClass('card-info');
+            $(animeInfo).html('<ul> <li>Episodes: '+list[i].episodes+
+            '</li> <li>Rank: '+list[i].rank.toString()+'</li> <li>Score: '+list[i].score.toString()+
+            '</li></ul>');
             $(animeRank).text('.' + list[i].rank);
             $(animeCard).append(animeRank);
             $(animeCard).append(animeImg);
             $(animeCard).append(animeTitle);
+            $(animeCard).append(animeInfo);
             $(el).append(animeCard);
         }
     }
