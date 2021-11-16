@@ -53,7 +53,7 @@ function refreshAnimeList() {
 // fetches for the top anime that are currently airing
 function getTopAnime() {
     console.log('getting top anime');
-    fetch(generalApi + 'top/anime')
+    fetch(generalApi + 'top/anime/'+1+'/bypopularity')
     .then(res => res.json())
     .then(data => {
         console.log(data.top);
