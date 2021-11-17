@@ -106,12 +106,13 @@ h5 {
 
 .panel {
     color: var(--text-clr);
-    background-image: url(https://cdn.myanimelist.net/images/anime/1223/96541.jpg?s=faffcb677a5eacd17bf761edd78bfb3f);
     background-size: cover;
     padding: 10rem 0 0;
     max-width: 35ch;
     border-radius: 1rem;
     overflow: hidden;
+    min-width: 260px;
+    min-height: 362px;
 
     transition: transform 500ms ease;
 }
