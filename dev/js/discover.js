@@ -3,6 +3,7 @@ let generalApi = 'https://api.jikan.moe/v3/'
 let searchInput = $('#search-input');
 let searchBtn = $('#search-btn');
 let animeList = [];
+let watchList = [];
 let animeListEl = $('.anime-list');
 let airingListEl = $(".top-airing");
 let trendingAnimeEl = $(".top-anime");
@@ -49,7 +50,13 @@ $(function() {
     // on click, get this to save to local storage tomorrow
     $('.anime-list, .top-anime, .top-airing').on('click', '.panel-btn', (e) => {
         let id = e.currentTarget.parentNode.parentNode.className.split('id-')[1];
-        console.log(id);
+        let cardObj = {
+            image: $('.id-'+id).css('background-image'),
+            title: $('.id-'+id).find('.panel-title').text()
+        }
+        watchList.push(cardObj);
+        saveToLocal(watchList);
+        console.log(watchList);
     });
 });
 
@@ -69,13 +76,6 @@ function getTopAnime() {
     .then(data => {
         console.log(data.top);
         createCards(data.top, true, trendingAnimeEl);
-    });
-
-    fetch(generalApi + 'top/anime/'+1+'/airing')
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.top);
-        createCards(data.top, true, airingListEl);
     });
 }
 
@@ -155,6 +155,19 @@ function createCards(list, isTop, el) {
             $(el).append(cardCol);
         }
     }
+}
+
+/*function Card(title, body, img,  info, addBtn, infoBtn) {
+    this.title = title;
+    this.body = body;
+    this.img = img;
+    this.info = info;
+    this.addBtn = addBtn;
+    this.infoBtn = infoBtn;
+}*/
+
+function saveToLocal(item) {
+    localStorage.setItem('card-list', JSON.stringify(item)); 
 }
 
 getTopAnime();
