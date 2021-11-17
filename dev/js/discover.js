@@ -58,6 +58,12 @@ $(function() {
         saveToLocal(watchList);
         console.log(watchList);
     });
+
+    $('.anime-list, .top-anime, .top-airing').on('click', '.panel-btn-info', (e) => {
+        let id = e.currentTarget.parentNode.parentNode.className.split('id-')[1];
+        window.location.replace($('.id-'+id).find('.mal-url').attr('href'));
+        console.log($('.id-'+id).find('.mal-url').attr('href'));
+    });
 });
 
 
@@ -91,9 +97,14 @@ function createCards(list, isTop, el) {
             let animeBody = document.createElement('p');
             let addBtn = document.createElement('button');
             let moreInfoBtn = document.createElement('button');
+            let malURL = document.createElement('a');
             let animeBodyInfo = '<ul><li> Rated: '+ list[i].rated + '</li> <li> Episodes: '+list[i].episodes.toString() + '</li> <li>Score: '+list[i].score.toString() +'</li></ul>';
             $(cardCol).addClass('column my-4');
             //$(animeImg).attr('src', list[i].image_url);
+            $(malURL).attr('href', list[i].url);
+            $(malURL).addClass('mal-url');
+            $(malURL).text(list[i].url);
+            $(malURL).hide();
             $(animeTitle).text(list[i].title);
             $(animeTitle).addClass('panel-title');
             $(animeCard).addClass('panel id-'+i.toString());
@@ -102,7 +113,7 @@ function createCards(list, isTop, el) {
             $(animeInfo).addClass('panel-content');
             $(animeBody).addClass('panel-body');
             $(addBtn).addClass('panel-btn');
-            $(moreInfoBtn).addClass('panel-btn');
+            $(moreInfoBtn).addClass('panel-btn-info');
             $(addBtn).text('Add to List');
             $(moreInfoBtn).text('More Info');
             $(animeBody).html(animeBodyInfo);
@@ -111,6 +122,7 @@ function createCards(list, isTop, el) {
             $(animeInfo).append(addBtn);
             $(animeInfo).append(moreInfoBtn);
             $(animeCard).append(animeImg);
+            $(animeCard).append(malURL);
             //$(animeCard).append(animeTitle);
             $(animeCard).append(animeInfo);
             $(cardCol).append(animeCard);
@@ -127,11 +139,16 @@ function createCards(list, isTop, el) {
             let animeBody = document.createElement('p');
             let addBtn = document.createElement('button');
             let moreInfoBtn = document.createElement('button');
+            let malURL = document.createElement('a');
             let animeBodyInfo = '<ul> <li>Episodes: '+list[i].episodes+
             '</li> <li>Rank: '+list[i].rank.toString()+'</li> <li>Score: '+list[i].score.toString()+
             '</li></ul>';
             $(cardCol).addClass('column my-4');
             //$(animeImg).attr('src', list[i].image_url);
+            $(malURL).attr('href', list[i].url);
+            $(malURL).addClass('mal-url');
+            $(malURL).text(list[i].url);
+            $(malURL).hide();
             $(animeTitle).text(list[i].title);
             $(animeTitle).addClass('panel-title');
             $(animeCard).addClass('panel id-'+i.toString());
@@ -140,7 +157,7 @@ function createCards(list, isTop, el) {
             $(animeInfo).addClass('panel-content');
             $(animeBody).addClass('panel-body');
             $(addBtn).addClass('panel-btn');
-            $(moreInfoBtn).addClass('panel-btn');
+            $(moreInfoBtn).addClass('panel-btn-info');
             $(addBtn).text('Add to List');
             $(moreInfoBtn).text('More Info');
             $(animeBody).html(animeBodyInfo);
@@ -149,6 +166,7 @@ function createCards(list, isTop, el) {
             $(animeInfo).append(addBtn);
             $(animeInfo).append(moreInfoBtn);
             $(animeCard).append(animeImg);
+            $(animeCard).append(malURL);
             //$(animeCard).append(animeTitle);
             $(animeCard).append(animeInfo);
             $(cardCol).append(animeCard);

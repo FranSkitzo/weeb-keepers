@@ -170,6 +170,16 @@ h5 {
     border-radius: 0.5rem;
 }
 
+.panel-btn-info {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: var(--primary-clr);
+    background-color: var(--accent-clr);
+    padding: 0.5em 1.25em;
+    border-radius: 0.5rem;
+}
+
 @media (hover) {
     .panel-content {
         transform: translateY(60%);
