@@ -16,10 +16,7 @@
             Weeb Keeper
           </a>
 
-          <div id="search-bar">
-            <input type="text" class="input is-rounded" style="width: 75%;" placeholder="Search" id="search-input">
-            <button id="search-btn" class="button has-background-warning">Search Anime</button>
-        </div>
+          
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -41,38 +38,82 @@
         </div>
     </nav>
       <!-- columns for Search and Trending -->
-    <div class="columns is-8 is-variable">
-        <!-- Column for holding the search bar -->
-        <div class="column box my-4 is-4-tablet">
-            <p class="title has-text-centered has-background-dark has-text-warning">Discover Anime</p>
+    <div class="section">
+        <div class="field has-addons">
+            <div class="control">
+                <input type="text" class="input" placeholder="Discover Anime" id="search-input">
+            </div>
+            <div class="control">
+                <a class="button is-warning" id="search-btn">
+                    Search
+                </a>
+            </div>
         </div>
+    </div>
+    <div class="section columns is-8 is-variable">
+        <!-- Column for holding the search bar -->
+        <!-- <div class="column box my-4 is-4-tablet">
+            <p class="title has-text-centered has-background-dark has-text-warning">Discover Anime</p>
+        </div> -->
         <!-- Column for search results -->
         <div class="column box my-4 has-background-grey">
             <p class="title has-text-centered has-background-dark has-text-warning">Trending Anime</p>
-            <div class="columns is-mobile">
-                <div class="column box my-4 has-background-dark top-anime">
-                    <!-- This is where the cards will be -->
-                    <div class="card has-background-grey">
-                        <div class="card-image">
-                            <img src="https://www.fillmurray.com/1280/960" alt="Placeholder image">
-                        </div>
-                    
-                        <div class="card-content">
-                            <div class="content has-text-light">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quos perferendis fugiat, saepe autem aspernatur!
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-footer-item has-text-light">Add to Watchlist</a>
+            <div class="columns has-background-grey is-mobile">
+                <div class="column my-4 top-anime">
+                    <div class="panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title">Fullmetal Alchemist: Brotherhood</h2>
+                            <p class="panel-body">Brief description of Anime. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quae fuga ea, debitis doloremque sequi.</p>
+                            <a href="#" class="panel-btn">Add</a>
+                            <a href="#" class="panel-btn">Learn More</a>
                         </div>
                     </div>
+                </div>
+                <div class="column my-4">
+                    <div class="panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title">Fullmetal Alchemist: Brotherhood</h2>
+                            <p class="panel-body">Brief description of Anime. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quae fuga ea, debitis doloremque sequi.</p>
+                            <a href="#" class="panel-btn">Add</a>
+                            <a href="#" class="panel-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column my-4">
+                    <div class="panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title">Fullmetal Alchemist: Brotherhood</h2>
+                            <p class="panel-body">Brief description of Anime. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quae fuga ea, debitis doloremque sequi.</p>
+                            <a href="#" class="panel-btn">Add</a>
+                            <a href="#" class="panel-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column my-4">
+                    <div class="panel">
+                        <div class="panel-content">
+                            <h2 class="panel-title">Fullmetal Alchemist: Brotherhood</h2>
+                            <p class="panel-body">Brief description of Anime. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam quae fuga ea, debitis doloremque sequi.</p>
+                            <a href="#" class="panel-btn">Add</a>
+                            <a href="#" class="panel-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- This is where the cards will be -->
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    <div class="top-airing">
-        <h2>Anime Currently Airing</h2>
+    <!-- top-airing -->
+    <div class="section columns is-8 is-variable">
+        <div class="column box my-4 has-background-grey">
+            <p class="title has-text-centered has-background-dark has-text-warning">Anime Currently Airing</p>
+            <div class="columns is-mobile">
+                <div class="column my-4 has-background-grey top-airing">
+                    <!-- This is where the cards will be -->
+                </div>
+            </div>
+        </div>
     </div>
     <div class="anime-list">
     </div>
