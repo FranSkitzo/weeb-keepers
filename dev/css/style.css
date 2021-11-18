@@ -24,15 +24,13 @@ header, h1.title, p.subtitle {
     color: var(--white);
 }
 
-#savebtn, #resetbtn {
-    border-radius: 5px;
-    margin-left: 10px;
-    background-color:var(--accent-color-2);
-}
 
 .columns {
-    margin: auto;
-    min-height: 100px;
+    margin: auto auto 5px;
+}
+
+section .columns {
+    min-height: 250px;
 }
 
 div.column.is-full {
@@ -48,7 +46,7 @@ a {
     color: white;
 }
 
-#discover a:hover, #tracker a:hover, #news a:hover {
+#discover a:hover, #tracker a:hover, #resetbtn a:hover {
     background-color: var(--accent-color-2);
     color: white;
     padding: 10px;
@@ -61,10 +59,31 @@ img {
     max-width: 200px;
 }
 
-#anime-title {
-    color:white;
+.anime-card {
+    margin: 10px auto;
+    text-align: center;
+    color: gray;
 }
 
 .card {
     background-color: var(--first-color) ;
+}
+
+footer {
+    color:var(--white);
+    padding:0 100px 10px;
+}
+
+#quote-character {
+    color:var(--accent-color);
+}
+
+#quote-anime {
+    color:gray;
+}
+
+#quotebtn {
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color:var(--accent-color-2);
 }

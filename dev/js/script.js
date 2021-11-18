@@ -101,17 +101,13 @@ function loadtitles() {
 
 }
 
-//save and reset buttons for localStorage
-$("#savebtn").click(function(){
-    savetitles();
-})
-
 function savetitles() {
     localStorage.setItem("card-list",JSON.stringify(titles));
 }
 
 $("#resetbtn").click(function(){
     localStorage.clear();
+    location.reload();
 })
 
 //add capability to drag and drop
@@ -145,13 +141,29 @@ function dragdrop() {
     })
 }
 
-getAnimeQuote();
-
+let animechanurl = "https://animechan.vercel.app/api/random";
 function getAnimeQuote() {
-    fetch('https://animechan.vercel.app/api/random')
-    .then(res => res.json())
-    .then(quote => console.log(quote));
+    $.get(animechanurl, function(quotedata) {
+        console.log(quotedata)
+
+        let quotetext = quotedata.quote;
+        console.log(quotetext);
+
+        let quoteanime = quotedata.anime;
+        console.log(quoteanime)
+
+        let quotecharacter = quotedata.character;
+        console.log(quotecharacter)
+
+        $("#quote").append('"'+quotetext+'"');
+        $("#quote-character").append("<span>"+quotecharacter+"</span");
+        $("#quote-anime").append("from "+quoteanime);
+    })
 }
 
+$("#quotebtn").click(function(){
+    location.reload();
+})
 
+getAnimeQuote();
 loadtitles();
