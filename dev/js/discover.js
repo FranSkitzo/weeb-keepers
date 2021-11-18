@@ -3,7 +3,7 @@ let generalApi = 'https://api.jikan.moe/v3/'
 let searchInput = $('#search-input');
 let searchBtn = $('#search-btn');
 let animeList = [];
-let watchList = [];
+let watchList = loadFromLocal() || [];
 let animeListEl = $('.anime-list');
 let airingListEl = $(".top-airing");
 let trendingAnimeEl = $(".top-anime");
@@ -186,6 +186,10 @@ function createCards(list, isTop, el) {
 
 function saveToLocal(item) {
     localStorage.setItem('card-list', JSON.stringify(item)); 
+}
+
+function loadFromLocal() {
+    return JSON.parse(localStorage.getItem('card-list'));
 }
 
 getTopAnime();
