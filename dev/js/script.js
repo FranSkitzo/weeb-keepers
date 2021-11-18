@@ -21,7 +21,7 @@ $.get(saikiurl, function(saikidata) {
 })
 
 function loadtitles() {
-    titles = JSON.parse(localStorage.getItem("saved titles"));
+    titles = JSON.parse(localStorage.getItem("card-list"));
 
     //if nothing in localstorage, create a new objection to track status arrays
     if(!titles) {
@@ -33,6 +33,23 @@ function loadtitles() {
     }
 
     console.log(titles);
+
+    for(let i = 0; i < titles.length; i++) {
+        console.log(titles[i].image + ' ' + titles[i].title);
+        $.get(titles[i], function(data) {
+            let dataTitle = data.title;
+            console.log(dataTitle)
+        
+        
+            let dataImg = data.image;
+            console.log(dataImg);
+            
+            //add title to watchlist
+            $("#want-row").append("<div id='title' class='want-to-watch column has-text-centered'><figure class='image is-inline-block'><img src='"+dataImg+"'</figure><p class='is-size-7' id='anime-title'>"+dataTitle+"</p></div>");
+            dragdrop();
+        })
+    }
+
 }
 
 //save and reset buttons for localStorage
@@ -41,7 +58,7 @@ $("#savebtn").click(function(){
 })
 
 function savetitles() {
-    localStorage.setItem("saved titles",JSON.stringify(titles));
+    localStorage.setItem("titles",JSON.stringify(titles));
 }
 
 $("#resetbtn").click(function(){
@@ -54,7 +71,6 @@ function dragdrop() {
         connectWith: $(".card"),
         scroll: false,
         tolerance: "pointer",
-        helper: "clone",
 
         update: function() {
             console.log($(this));
@@ -74,6 +90,14 @@ function dragdrop() {
             })
         }
     })
+}
+
+getAnimeQuote();
+
+function getAnimeQuote() {
+    fetch('https://animechan.vercel.app/api/random')
+    .then(res => res.json())
+    .then(quote => console.log(quote));
 }
 
 
