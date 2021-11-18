@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,8 +10,8 @@ header {
     padding-bottom: 50px;
 }
 
-h1 {
-    color: #AAA;
+h5 {
+    color: #f3f1f1;
     font-size: 36px;
     font-weight: 400;
     text-align: center;
@@ -24,8 +24,8 @@ h1 {
     justify-content: space-around;
     width: 33%;
     max-width: 33%;
-    margin-bottom: 16px;
-    
+    margin-bottom: 6px;
+    background-color:#363636
 }
 
 .card-img {
@@ -42,8 +42,8 @@ h1 {
 }
 
 .card > h4 {
-    padding: 16px;
-    color: #313131;
+    padding: 1rem;
+    color: #f3f1f1;
 }
 
 .card > img:hover {
@@ -59,3 +59,203 @@ h1 {
     align-items: center;
 }
 
+.top-newcomer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.top-airing {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.card-info {
+    display: none;
+} */
+
+body {
+    background-color: var(--second-color)
+}
+
+:root {
+    --first-color: #021A2E;
+    --second-color: #28364A;
+    --third-color: #2F4555;
+    --white: #ffffff;
+    --accent-color: #FF4B24;
+    --accent-color-2: #3e8ed0;
+    --accent-color-3: #ff5936; 
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* body {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    line-height: 1.6;
+    background: var(--primary-clr);
+    font-family: sans-serif;
+} */
+
+.navbar {
+    background-color: var(--first-color);
+}
+
+.navbar-item {
+    color: var(--accent-color);
+}
+
+.navbar-item:hover {
+    background-color: var(--first-color);
+}
+
+#home-btn:hover #discover-btn:hover {
+    background-color: var(--accent-color-2);
+    color: white;
+    padding: 10px;
+    margin: -10px;
+    border-radius: 5px;
+}
+
+#search-btn {
+    background-color: var(--accent-color);
+}
+
+.title {
+    color:var(--accent-color);
+}
+
+.column {
+    background-color: var(--first-color);
+}
+
+.panel {
+    color: var(--white);
+    background-size: cover;
+    padding: 10rem 0 0;
+    max-width: 35ch;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-width: 260px;
+    min-height: 362px;
+
+    transition: transform 500ms ease;
+}
+
+.panel:hover,
+.panel:focus-within {
+    transform: scale(1.05);
+}
+
+.panel-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(20 0% 0% / 0.6) 19%,
+        hsl(0 0% 0% / 1)
+    );
+}
+
+.panel-title {
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+}
+
+.panel-title::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    background: var(--accent-color);
+    
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.panel:hover .panel-title::after,
+.panel:focus-within .panel-title::after {
+    transform: scaleX(1);
+}
+
+.panel-body {
+    color: rgb(255, 255, 255 / 0.8);
+}
+
+.panel-btn {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: var(--first-color);
+    background-color: var(--accent-color);
+    padding: 0.5em 1.25em;
+    border-radius: 0.5rem;
+}
+
+.panel-btn-info {
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    color: var(--first-color);
+    background-color: var(--accent-color);
+    padding: 0.5em 1.25em;
+    border-radius: 0.5rem;
+}
+
+@media (hover) {
+    .panel-content {
+        transform: translateY(60%);
+        transition: transform 500ms ease;
+    }
+
+    .panel:hover .panel-content,
+    .panel:focus-within .panel-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .panel:focus-within .panel-content {
+        transition-duration: 0ms;
+    }
+
+    .panel-content > *:not(.panel-title) {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .panel:hover .panel-content > *:not(.panel-title),
+    .panel:focus-within .panel-content > *:not(.panel-title) {
+        opacity: 1;
+        transition-delay: 700ms;
+    }
+
+    .panel-title::after {
+        transform: scaleX(0);
+    }
+}
+
+.panel-btn:hover,
+.panel-btn:focus {
+    background-color: var(--accent-color-3);
+}
+
+.panel-btn-info:hover,
+.panel-btn-info:focus {
+    background-color: var(--accent-color-3);
+}
