@@ -12,46 +12,68 @@
     <header class="has-text-centered">
         <h1 class="title">Weeb Keeper</h1>
         <p class="subtitle">Track your watchlist and discover new titles to enjoy!</p>
-        <nav class="columns is-mobile">
-            <div class="column" id="tracker"><a href="index.html">Tracker</a></div>
-            <div class="column" id="discover"><a href="discover.html">Search & Discover</a></div>
-            <div class="column" id="news"><a href="">News</a></div>
+        <nav class="columns is-mobile is-centered">
+            <div class="column is-one-third-mobile is-2-desktop" id="tracker"><a href="index.html">Tracker</a></div>
+            <div class="column is-one-third-mobile is-2-desktop" id="discover"><a href="discover.html">Search & Discover</a></div>
+            <div class="column is-one-third-mobile is-2-desktop" id="resetbtn"><a href="">Reset</a></div>
+
         </nav>
     
     </header>
-    <section id="wanttowatch" class="columns is-mobile">
-        <div class="column is-full">
-            <p class="has-text-centered">WANT TO WATCH</p>
-            <div id="want-row" class="card columns is-multiline is-centered is-mobile"></div>
+
+    <div id="container" class="columns">
+        <div class="column is-one-third-desktop">
+            <section id="wanttowatch" class="columns">
+                <div class="column is-full">
+                    <p class="has-text-centered">WANT TO WATCH</p>
+                    <div id="row-want" class="card columns is-multiline is-centered is-mobile"></div>
+                </div>
+            </section>
+    
         </div>
-    </section>
 
-    <section id="currentlywatching" class="columns is-mobile">
-        <div class="column is-full">
-            <p class="has-text-centered">CURRENTLY WATCHING</p>
-            <div id="current-row" class="card columns is-multiline is-centered is-mobile"></div>
-    </section>
+        <div class="column is-one-third-desktop">
+            <section id="currentlywatching" class="columns is-mobile">
+                <div class="column is-full">
+                    <p class="has-text-centered">CURRENTLY WATCHING</p>
+                    <div id="row-current" class="card columns is-multiline is-centered"></div>
+                </div>
+            </section>
+        </div>
 
-    <section id="completed" class="columns is-mobile">
-        <div class="column is-full">
-            <p class="has-text-centered">COMPLETED</p>
-            <div id="completed-row" class="card columns is-multiline is-centered is-mobile"></div>
-    </section>
-
-    <div class="buttons are-small is-centered">
-        <a id="savebtn" class="button is-info">
-            Save
-        </a>
-        <a id="resetbtn" class="button is-info">
-            Reset
-        </a>
+        <div class="column  is-one-third-desktop">
+            <section id="completed" class="columns is-mobile">
+                <div class="column is-full">
+                    <p class="has-text-centered">COMPLETED</p>
+                    <div id="row-completed" class="card columns is-multiline is-centered"></div>
+                </div>
+            </section>
+        </div>
     </div>
 
 
-    <!-- add news in footer -->
 
+
+    <footer class="has-text-centered">
+        <blockquote>
+            <p id="quote" class="column"></p>
+        </blockquote>
+        
+        <p id="quote-character"></p>
+        <p id="quote-anime"></p>
+
+        
+    </footer>
+
+    <div class="buttons are-small is-centered">
+        <a id="quotebtn" class="button is-info">
+            Get a new random quote!
+        </a>
+    </div>
+    
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="./dev/js/script.js"></script>
 </body>
 </html>
