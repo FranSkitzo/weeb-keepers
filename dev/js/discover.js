@@ -3,7 +3,7 @@ let generalApi = 'https://api.jikan.moe/v3/'
 let searchInput = $('#search-input');
 let searchBtn = $('#search-btn');
 let animeList = [];
-let watchList = loadFromLocal() || [];
+let watchList = loadFromLocal() || {want: [], current: [], completed: []};
 let animeListEl = $('.anime-list');
 let airingListEl = $(".top-airing");
 let trendingAnimeEl = $(".top-anime");
@@ -51,10 +51,10 @@ $(function() {
     $('.anime-list, .top-anime, .top-airing').on('click', '.panel-btn', (e) => {
         let id = e.currentTarget.parentNode.parentNode.className.split('id-')[1];
         let cardObj = {
-            image: $('.id-'+id).css('background-image'),
+            image: $('.id-'+id).find('.anime-img').attr('src'),
             title: $('.id-'+id).find('.panel-title').text()
         }
-        watchList.push(cardObj);
+        watchList.want.push(cardObj);
         saveToLocal(watchList);
         console.log(watchList);
     });
@@ -100,7 +100,8 @@ function createCards(list, isTop, el) {
             let malURL = document.createElement('a');
             let animeBodyInfo = '<ul><li> Rated: '+ list[i].rated + '</li> <li> Episodes: '+list[i].episodes.toString() + '</li> <li>Score: '+list[i].score.toString() +'</li></ul>';
             $(cardCol).addClass('column my-4');
-            //$(animeImg).attr('src', list[i].image_url);
+            $(animeImg).attr('src', list[i].image_url);
+            $(animeImg).addClass('anime-img');
             $(malURL).attr('href', list[i].url);
             $(malURL).addClass('mal-url');
             $(malURL).text(list[i].url);
@@ -108,8 +109,10 @@ function createCards(list, isTop, el) {
             $(animeTitle).text(list[i].title);
             $(animeTitle).addClass('panel-title');
             $(animeCard).addClass('panel id-'+i.toString());
-            $(animeCard).css('background-image', 'url('+list[i].image_url+')')
-            //$(animeImg).addClass('card-img');
+            $(animeCard).css('background-image', 'url('+list[i].image_url+')');
+            $(animeCard).append(animeImg);
+            $(animeImg).hide();
+            //$(animeImg.).addClass('card-img');
             $(animeInfo).addClass('panel-content');
             $(animeBody).addClass('panel-body');
             $(addBtn).addClass('panel-btn');
@@ -144,7 +147,8 @@ function createCards(list, isTop, el) {
             '</li> <li>Rank: '+list[i].rank.toString()+'</li> <li>Score: '+list[i].score.toString()+
             '</li></ul>';
             $(cardCol).addClass('column my-4');
-            //$(animeImg).attr('src', list[i].image_url);
+            $(animeImg).attr('src', list[i].image_url);
+            $(animeImg).addClass('anime-img');
             $(malURL).attr('href', list[i].url);
             $(malURL).addClass('mal-url');
             $(malURL).text(list[i].url);
@@ -153,6 +157,8 @@ function createCards(list, isTop, el) {
             $(animeTitle).addClass('panel-title');
             $(animeCard).addClass('panel id-'+i.toString());
             $(animeCard).css('background-image', 'url('+list[i].image_url+')')
+            $(animeCard).append(animeImg);
+            $(animeImg).hide();
             //$(animeImg).addClass('card-img');
             $(animeInfo).addClass('panel-content');
             $(animeBody).addClass('panel-body');
