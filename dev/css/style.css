@@ -24,14 +24,6 @@ header, h1.title, p.subtitle {
     color: var(--white);
 }
 
-#searchbar {
-    justify-content: center;
-}
-
-#searchbtn {
-    background-color:var(--accent-color);
-}
-
 #savebtn, #resetbtn {
     border-radius: 5px;
     margin-left: 10px;
@@ -40,6 +32,7 @@ header, h1.title, p.subtitle {
 
 .columns {
     margin: auto;
+    min-height: 100px;
 }
 
 div.column.is-full {
@@ -70,4 +63,8 @@ img {
 
 #anime-title {
     color:white;
+}
+
+.card {
+    background-color: var(--first-color) ;
 }
