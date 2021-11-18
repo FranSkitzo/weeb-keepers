@@ -122,6 +122,14 @@ body {
     background-color: var(--first-color);
 }
 
+#home-btn:hover #discover-btn:hover {
+    background-color: var(--accent-color-2);
+    color: white;
+    padding: 10px;
+    margin: -10px;
+    border-radius: 5px;
+}
+
 #search-btn {
     background-color: var(--accent-color);
 }
