@@ -30,7 +30,7 @@ header, h1.title, p.subtitle {
 }
 
 section .columns {
-    min-height: 250px;
+    min-height: 319px;
 }
 
 div.column.is-full {
@@ -56,11 +56,11 @@ a {
 
 img {
     min-width: 100px;
-    max-width: 200px;
+    max-width: 150px;
 }
 
 .anime-card {
-    margin: 10px auto;
+    margin: 10px;
     text-align: center;
     color: gray;
 }
@@ -87,3 +87,4 @@ footer {
     margin-left: 10px;
     background-color:var(--accent-color-2);
 }
+    
