@@ -81,12 +81,18 @@ h5 {
     display: none;
 } */
 
+body {
+    background-color: var(--second-color)
+}
+
 :root {
-    --accent-clr: hsl(16, 100%, 46%);
-    --secaccent-clr: hsl(16, 100%, 55%);
-    --primary-clr: hsl(250, 19%, 14%);
-    --secondary-clr: hsl(250, 19%, 22%);
-    --text-clr: hsl(0, 0%, 100%); 
+    --first-color: #021A2E;
+    --second-color: #28364A;
+    --third-color: #2F4555;
+    --white: #ffffff;
+    --accent-color: #FF4B24;
+    --accent-color-2: #3e8ed0;
+    --accent-color-3: #ff5936; 
 }
 
 *,
@@ -104,8 +110,32 @@ h5 {
     font-family: sans-serif;
 } */
 
+.navbar {
+    background-color: var(--first-color);
+}
+
+.navbar-item {
+    color: var(--accent-color);
+}
+
+.navbar-item:hover {
+    background-color: var(--first-color);
+}
+
+#search-btn {
+    background-color: var(--accent-color);
+}
+
+.title {
+    color:var(--accent-color);
+}
+
+.column {
+    background-color: var(--first-color);
+}
+
 .panel {
-    color: var(--text-clr);
+    color: var(--white);
     background-size: cover;
     padding: 10rem 0 0;
     max-width: 35ch;
@@ -145,7 +175,7 @@ h5 {
     left: calc(var(--padding) * -1);
     bottom: 0;
     width: calc(100% + var(--padding));
-    background: var(--accent-clr);
+    background: var(--accent-color);
     
     transform-origin: left;
     transition: transform 500ms ease;
@@ -164,8 +194,8 @@ h5 {
     cursor: pointer;
     display: inline;
     text-decoration: none;
-    color: var(--primary-clr);
-    background-color: var(--accent-clr);
+    color: var(--first-color);
+    background-color: var(--accent-color);
     padding: 0.5em 1.25em;
     border-radius: 0.5rem;
 }
@@ -174,8 +204,8 @@ h5 {
     cursor: pointer;
     display: inline;
     text-decoration: none;
-    color: var(--primary-clr);
-    background-color: var(--accent-clr);
+    color: var(--first-color);
+    background-color: var(--accent-color);
     padding: 0.5em 1.25em;
     border-radius: 0.5rem;
 }
@@ -214,5 +244,10 @@ h5 {
 
 .panel-btn:hover,
 .panel-btn:focus {
-    background-color: var(--secaccent-clr);
+    background-color: var(--accent-color-3);
+}
+
+.panel-btn-info:hover,
+.panel-btn-info:focus {
+    background-color: var(--accent-color-3);
 }

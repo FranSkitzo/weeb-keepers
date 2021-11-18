@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="dev/css/discover.css">
     <title>Weeb Keeper - Discover</title>
 </head>
-<body class="has-navbar-fixed has-background-dark">
+<body class="has-navbar-fixed">
     <!-- nav bar -->
-    <nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a class="navbar-item is-size-1 has-text-warning">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-item">
+          <a href="index.html" class="navbar-item is-size-1">
             Weeb Keeper
           </a>
 
           
       
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
-          </a>
+          </a> -->
         </div>
       
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navMenu" class="navbar-menu is-active" style="background-color: #021A2E">
           <div class="navbar-end">
-            <a class="navbar-item has-text-warning">
+            <a href="index.html" class="navbar-item">
               Home
             </a>
       
-            <a class="navbar-item has-text-warning">
+            <a href="discover.html" class="navbar-item">
               Discovery
             </a>
           </div>
@@ -44,7 +44,7 @@
                 <input type="text" class="input" placeholder="Discover Anime" id="search-input">
             </div>
             <div class="control">
-                <a class="button is-warning" id="search-btn">
+                <a class="button" id="search-btn">
                     Search
                 </a>
             </div>
@@ -56,9 +56,9 @@
             <p class="title has-text-centered has-background-dark has-text-warning">Discover Anime</p>
         </div> -->
         <!-- Column for search results -->
-        <div class="column box my-4 has-background-grey">
-            <p class="title has-text-centered has-background-dark has-text-warning">Trending Anime</p>
-            <div class="columns top-anime has-background-grey is-mobile is-multiline">
+        <div class="column box my-4">
+            <p class="title has-text-centered">Trending Anime</p>
+            <div class="columns top-anime is-mobile is-multiline">
                     <!-- This is where the cards will be -->
                 </div>
             </div>
@@ -66,9 +66,9 @@
     </div>
     
     <div class="section columns is-8 is-variable">
-        <div class="column box my-4 has-background-grey">
-            <p class="title has-text-centered has-background-dark has-text-warning">Search Results</p>
-            <div class="columns is-mobile is-multiline has-background-grey anime-list">
+        <div class="column box my-4">
+            <p class="title has-text-centered">Search Results</p>
+            <div class="columns is-mobile is-multiline anime-list">
                 
             </div>
         </div>
