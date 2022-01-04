@@ -1,0 +1,70 @@
+:root {
+    --first-color: #021A2E;
+    --second-color: #28364A;
+    --third-color: #2F4555;
+    --white: #ffffff;
+    --accent-color: #FF4B24;
+    --accent-color-2: #3e8ed0;
+}
+
+html {
+    background: var(--second-color);
+}
+
+h1.title {
+    padding-top: 20px;
+}
+
+header {
+    margin: 10px auto;
+}
+
+header, h1.title, p.subtitle {
+    background-color: var(--second-color);
+    color: var(--white);
+}
+
+#savebtn, #resetbtn {
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color:var(--accent-color-2);
+}
+
+.columns {
+    margin: auto;
+    min-height: 100px;
+}
+
+div.column.is-full {
+    background-color: var(--first-color);
+}
+
+p.has-text-centered {
+    background-color: var(--accent-color);
+    color:var(--white);
+}
+
+a {
+    color: white;
+}
+
+#discover a:hover, #tracker a:hover, #news a:hover {
+    background-color: var(--accent-color-2);
+    color: white;
+    padding: 10px;
+    margin: -10px;
+    border-radius: 5px;
+}
+
+img {
+    min-width: 100px;
+    max-width: 200px;
+}
+
+#anime-title {
+    color:white;
+}
+
+.card {
+    background-color: var(--first-color) ;
+}
